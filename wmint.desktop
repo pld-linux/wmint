@@ -1,0 +1,7 @@
+[Desktop Entry]
+Name=wmint
+Comment=Simple Interrupts Monitor
+Comment[pl]=Prosty monitor przerwañ
+Exec=wmint
+Terminal=0
+Type=Application
