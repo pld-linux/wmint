@@ -1,13 +1,14 @@
 Summary:	Dockable Interrupts Monitor for WindowMaker
-Summary(pl):	Monitor przerwañ dla Doku WindowMakera 
+Summary(pl):	Monitor przerwañ dla Doku WindowMakera
 Name:		wmint
 Version:	0.9
 Release:	2
 License:	GPL
 Group:		X11/Window Managers/Tools
+Group(de):	X11/Fenstermanager/Werkzeuge
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
 Source0:	http://www.gcu-squad.org/wmint/%{name}-%{version}.tar.gz
-Source1:	wmint.desktop
+Source1:	%{name}.desktop
 URL:		http://www.gcu-squad.org/wmint/
 BuildRequires:	XFree86-devel
 ExclusiveArch:	%{ix86}
@@ -28,13 +29,13 @@ rm -f %{name}/wmint.o
 
 %build
 %{__make} -C %{name} \
-	FLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include" 
+	FLAGS="%{rpmcflags} -I%{_includedir}" 
 
 %install
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_applnkdir}/DockApplets}
 
-install -s %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
+install %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
 install %{SOURCE1}         $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 
 gzip -9nf BUGS HINTS README TODO
