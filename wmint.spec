@@ -2,7 +2,7 @@ Summary:	Dockable Interrupts Monitor for WindowMaker
 Summary(pl):	Monitor przerwañ dla Doku WindowMakera
 Name:		wmint
 Version:	0.9
-Release:	5
+Release:	6
 License:	GPL
 Group:		X11/Window Managers/Tools
 Source0:	http://team.gcu-squad.org/~slix/wmint/%{name}-%{version}.tar.gz
@@ -28,7 +28,8 @@ cd wmint
 
 %{__make} clean
 %{__make} %{name} \
-	FLAGS="%{rpmcflags} -I%{_includedir}"
+	FLAGS="%{rpmcflags} -I%{_includedir}" \
+	LIBDIR="-L/usr/X11R6/%{_lib}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
