@@ -1,0 +1,12 @@
+diff -uNr wmint-0.9.orig/wmint/Makefile wmint-0.9/wmint/Makefile
+--- wmint-0.9.orig/wmint/Makefile	Sat Jan  8 21:25:18 2000
++++ wmint-0.9/wmint/Makefile	Sun Jun 30 23:33:49 2002
+@@ -17,7 +17,7 @@
+ 	for i in $(OBJS) ; do \
+ 		rm $$i ; \
+ 	done
+-	rm wmint
++	rm -f wmint
+ 
+ install:: wmint
+ 	cp -f wmint /usr/local/bin/
