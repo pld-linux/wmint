@@ -7,9 +7,9 @@ License:	GPL
 Group:		X11/Window Managers/Tools
 Group(de):	X11/Fenstermanager/Werkzeuge
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
-Source0:	http://www.gcu-squad.org/wmint/%{name}-%{version}.tar.gz
+Source0:	http://team.gcu-squad.org/~slix/%{name}-%{version}.tar.gz
 Source1:	%{name}.desktop
-URL:		http://www.gcu-squad.org/wmint/
+URL:		http://team.gcu-squad.org/~slix/
 BuildRequires:	XFree86-devel
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -45,7 +45,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc {BUGS,HINTS,README,TODO}.gz
+%doc *.gz
 %attr(755,root,root) %{_bindir}/%{name}
 
 %{_applnkdir}/DockApplets/%{name}.desktop
