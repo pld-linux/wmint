@@ -6,6 +6,7 @@ Release:	4
 License:	GPL
 Group:		X11/Window Managers/Tools
 Source0:	http://team.gcu-squad.org/~slix/%{name}-%{version}.tar.gz
+# Source0-md5:	fa897484a9e68168526f681939154f85
 Source1:	%{name}.desktop
 Patch0:		%{name}-makefile.patch
 URL:		http://team.gcu-squad.org/~slix/
