@@ -27,7 +27,7 @@ rm -f %{name}/wmint.o
 
 %build
 %{__make} -C %{name} \
-	FLAGS="%{rpmcflags} -I%{_includedir}" 
+	FLAGS="%{rpmcflags} -I%{_includedir}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
