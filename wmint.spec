@@ -37,7 +37,7 @@ rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{%{_bindir},%{_applnkdir}/DockApplets}
 
 install %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
-#install %{SOURCE1}         $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
+install %{SOURCE1}         $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -47,4 +47,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc BUGS HINTS README TODO
 %attr(755,root,root) %{_bindir}/%{name}
 
-#%%{_applnkdir}/DockApplets/%{name}.desktop
+%{_applnkdir}/DockApplets/%{name}.desktop
