@@ -10,7 +10,6 @@ Source0:	http://www.gcu-squad.org/wmint/%{name}-%{version}.tar.gz
 Source1:	wmint.desktop
 URL:		http://www.gcu-squad.org/wmint/
 BuildRequires:	XFree86-devel
-BuildRequires:	xpm-devel
 ExclusiveArch:	%{ix86}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
