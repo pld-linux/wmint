@@ -2,7 +2,7 @@ Summary:	Dockable Interrupts Monitor for WindowMaker
 Summary(pl):	Monitor przerwañ dla Doku WindowMakera 
 Name:		wmint
 Version:	0.9
-Release:	1
+Release:	2
 License:	GPL
 Group:		X11/Window Managers/Tools
 Group(pl):	X11/Zarz±dcy Okien/Narzêdzia
