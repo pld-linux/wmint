@@ -6,4 +6,6 @@ Exec=wmint
 Terminal=false
 Type=Application
 Encoding=UTF-8
+Categories=Applet;
+NotShowIn=GNOME;KDE;
 # vi: encoding=utf-8
