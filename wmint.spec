@@ -28,7 +28,7 @@ wmint jest prostym, dokowalnym monitorem przerwañ dla WindowMakera.
 rm -f %{name}/wmint.o
 
 %build
-make -C %{name} \
+%{__make} -C %{name} \
 	FLAGS="$RPM_OPT_FLAGS -I/usr/X11R6/include" 
 
 %install
