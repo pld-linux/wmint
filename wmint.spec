@@ -12,7 +12,6 @@ URL:		http://team.gcu-squad.org/~slix/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
-%define		_prefix		/usr/X11R6
 
 %description
 wmint is a simple dockable Interrupts Monitor for Window Maker.
