@@ -1,5 +1,5 @@
 [Desktop Entry]
-Name=wmint
+Name=wmInt
 Comment=Simple Interrupts Monitor
 Comment[pl]=Prosty monitor przerwań
 Exec=wmint
