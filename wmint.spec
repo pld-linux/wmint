@@ -46,4 +46,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc BUGS HINTS README TODO
 %attr(755,root,root) %{_bindir}/%{name}
 
-#%{_applnkdir}/DockApplets/%{name}.desktop
+#%%{_applnkdir}/DockApplets/%{name}.desktop
