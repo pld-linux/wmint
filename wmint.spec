@@ -2,17 +2,16 @@ Summary:	Dockable Interrupts Monitor for WindowMaker
 Summary(pl):	Monitor przerwañ dla Doku WindowMakera
 Name:		wmint
 Version:	0.9
-Release:	4
+Release:	5
 License:	GPL
 Group:		X11/Window Managers/Tools
-Source0:	http://team.gcu-squad.org/~slix/%{name}-%{version}.tar.gz
+Source0:	http://team.gcu-squad.org/~slix/wmint/%{name}-%{version}.tar.gz
 # Source0-md5:	fa897484a9e68168526f681939154f85
 Source1:	%{name}.desktop
 Patch0:		%{name}-makefile.patch
-URL:		http://team.gcu-squad.org/~slix/
+URL:		http://team.gcu-squad.org/~slix/wmint/
 BuildRequires:	XFree86-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
-
 
 %description
 wmint is a simple dockable Interrupts Monitor for Window Maker.
@@ -30,14 +29,13 @@ cd wmint
 %{__make} clean
 %{__make} %{name} \
 	FLAGS="%{rpmcflags} -I%{_includedir}"
-cd ..
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_applnkdir}/DockApplets}
+install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir}/docklets}
 
 install %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
-install %{SOURCE1}         $RPM_BUILD_ROOT%{_applnkdir}/DockApplets
+install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/docklets
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -46,5 +44,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc BUGS HINTS README TODO
 %attr(755,root,root) %{_bindir}/%{name}
-
-%{_applnkdir}/DockApplets/%{name}.desktop
+%{_desktopdir}/docklets/%{name}.desktop
