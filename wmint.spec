@@ -1,5 +1,5 @@
 Summary:	Dockable Interrupts Monitor for WindowMaker
-Summary(pl):	Monitor przerwañ dla Doku WindowMakera
+Summary(pl.UTF-8):   Monitor przerwaÅ„ dla Doku WindowMakera
 Name:		wmint
 Version:	0.9
 Release:	6
@@ -16,8 +16,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 wmint is a simple dockable Interrupts Monitor for Window Maker.
 
-%description -l pl
-wmint jest prostym, dokowalnym monitorem przerwañ dla WindowMakera.
+%description -l pl.UTF-8
+wmint jest prostym, dokowalnym monitorem przerwaÅ„ dla WindowMakera.
 
 %prep
 %setup -q
