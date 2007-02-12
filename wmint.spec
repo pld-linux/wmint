@@ -1,5 +1,5 @@
 Summary:	Dockable Interrupts Monitor for WindowMaker
-Summary(pl.UTF-8):   Monitor przerwań dla Doku WindowMakera
+Summary(pl.UTF-8):	Monitor przerwań dla Doku WindowMakera
 Name:		wmint
 Version:	0.9
 Release:	6
