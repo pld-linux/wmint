@@ -29,8 +29,9 @@ cd wmint
 
 %{__make} clean
 %{__make} %{name} \
-	FLAGS="%{rpmcflags} -I%{_includedir}" \
-	LIBDIR="-L/usr/%{_lib}"i
+	CC="%{__cc}" \
+	CFLAGS="%{rpmcflags} -I%{_includedir}" \
+	LDFLAGS="%{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
