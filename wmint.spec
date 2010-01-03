@@ -8,7 +8,7 @@ Group:		X11/Window Managers/Tools
 Source0:	http://team.gcu-squad.org/~slix/wmint/%{name}-%{version}.tar.gz
 # Source0-md5:	fa897484a9e68168526f681939154f85
 Source1:	%{name}.desktop
-Patch0:		%{name}-makefile.patch
+Source2:	%{name}.Makefile
 URL:		http://team.gcu-squad.org/~slix/wmint/
 BuildRequires:	xorg-lib-libXext-devel
 BuildRequires:	xorg-lib-libXpm-devel
@@ -22,23 +22,28 @@ wmint jest prostym, dokowalnym monitorem przerwań dla WindowMakera.
 
 %prep
 %setup -q
-%patch0 -p1
+
+awk '/OBJS *=/{p=1} {if(p)print} !/\\$/{p=0}' wmint/Makefile > wmint/Makefile.include
+
+cat << 'EOF' >> wmint/Makefile.include
+NAME = %{name}
+DOCKLETFILE = %{SOURCE1}
+CC = %{__cc}
+OPTCFLAGS = %{rpmcflags}
+LDFLAGS = %{rpmldflags}
+EOF
+
+install %{SOURCE2} wmint/Makefile
 
 %build
-cd wmint
-
-%{__make} clean
-%{__make} %{name} \
-	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags}" \
-	LDFLAGS="%{rpmldflags}"
+%{__make} -C wmint clean
+%{__make} -C wmint
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT{%{_bindir},%{_desktopdir}/docklets}
 
-install %{name}/%{name} $RPM_BUILD_ROOT%{_bindir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}/docklets
+%{__make} -C wmint install \
+	DESTDIR="$RPM_BUILD_ROOT"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
