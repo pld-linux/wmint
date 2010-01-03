@@ -30,7 +30,7 @@ cd wmint
 %{__make} clean
 %{__make} %{name} \
 	CC="%{__cc}" \
-	CFLAGS="%{rpmcflags} -I%{_includedir}" \
+	CFLAGS="%{rpmcflags}" \
 	LDFLAGS="%{rpmldflags}"
 
 %install
