@@ -1,0 +1,3 @@
+- fixed building on PPC
+- use new %doc
+- rel.4.
